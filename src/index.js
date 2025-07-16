@@ -12,7 +12,7 @@ const server = http.createServer(app);
 const onlineUsers = new Map();
 const io = new Server(server, {
   cors: {
-   origin: "ikhsandwisaputra.github.io/yu-chat/",// Ganti dengan URL frontend React kamu
+   origin: "https://ikhsandwisaputra.github.io/shoes-commerce/",// Ganti dengan URL frontend React kamu
     methods: ["GET", "POST"],
   },
 });
