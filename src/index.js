@@ -12,7 +12,7 @@ const server = http.createServer(app);
 const onlineUsers = new Map();
 const io = new Server(server, {
   cors: {
-   origin: "https://ikhsandwisaputra.github.io/yu-chat/",// Ganti dengan URL frontend React kamu
+   origin: "*",// Ganti dengan URL frontend React kamu
     methods: ["GET", "POST"],
   },
 });
@@ -89,6 +89,10 @@ socket.on('typing_stop', ({ room }) => {
 });
 
 const PORT = process.env.PORT || 5000;
+
+app.get("/", (req, res) => {
+  res.send("Yu Chat API is running.");
+});
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
